@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor</title>
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script> -->
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/inline/ckeditor.js"></script> -->
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/balloon/ckeditor.js"></script> -->
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/balloon-block/ckeditor.js"></script> -->
+        <!-- <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/decoupled-document/ckeditor.js"></script> -->
+        <script src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+        <script src="../node_modules/@ckeditor/ckeditor5-vue2/dist/ckeditor.js"></script>
+    </head>
+    <body>
+        
+        <h1>Document editor</h1>
+        <!-- The toolbar will be rendered in this container. -->
+        <!-- <div id="toolbar-container"></div> -->
+
+        <!-- This container will become the editable. -->
+        <!-- <div id="editor">
+            <p>This is the initial editor content.</p>
+        </div> -->
+        <div id="app">
+            <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script>
+            const app = new Vue( {
+                el: '#app',
+                data: {
+                    editor: ClassicEditor,
+                    editorData: '<p>Content of the editor.</p>',
+                    editorConfig: {
+                        // The configuration of the editor.
+                    }
+                }
+            } );
+
+        </script>
+        <!-- <script>            
+            // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+            function MyUploadAdapterPlugin( editor ) {
+                editor.plugins.get( 'FileRepository' ).createUploadAdapter = function( loader ) {
+                    // ...
+                };
+            }
+
+            // Load the custom upload adapter as a plugin of the editor.
+            ClassicEditor
+                .create( document.querySelector( '#editor' ), {
+                    extraPlugins: [ MyUploadAdapterPlugin ],
+
+                    // ...
+                } )
+                .catch( error => {
+                    console.log( error );
+                } );
+            
+        </script> -->
+        <!-- <script>
+            InlineEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script> -->
+        <!-- <script>
+            BalloonEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script> -->
+        <!-- <script>
+            BalloonEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script> -->
+        <!-- <script>
+            DecoupledEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    const toolbarContainer = document.querySelector( '#toolbar-container' );
+        
+                    toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script> -->
+    </body>
+</html>

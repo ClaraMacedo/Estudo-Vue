@@ -1,0 +1,13 @@
+<script>
+function calculaIdade(dtNasc){
+	dataHj =  new Date();
+	novadt = dtNasc.split("/");
+	dtNasc = novadt[2]+"-"+novadt[1]+"-"+novadt[0];
+	dataNascimento = new Date(novadt[2],novadt[1]-1,novadt[0])
+	idade = Math.abs(dataHj - dataNascimento)/31557600000
+	return idade 
+}
+
+calculaIdade("08/12/1998");
+
+</script>
